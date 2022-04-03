@@ -195,10 +195,6 @@ public class GroupTreeViewModel extends AbstractViewModel {
                 boolean keepPreviousAssignments;
 
                 if(!group.getName().equals(oldGroup.getDisplayName())) {
-
-                    System.out.println(group.getName());
-                    System.out.println(oldGroup.getDisplayName());
-
                     keepPreviousAssignments = dialogService.showConfirmationDialogAndWait(
                             Localization.lang("Change of Grouping Method"),
                             Localization.lang("Assign the original group's entries to this group?"));
