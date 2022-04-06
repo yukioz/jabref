@@ -200,7 +200,7 @@ public class GroupTreeViewModel extends AbstractViewModel {
                             Localization.lang("Assign the original group's entries to this group?"));
                 }
                 else {
-                    keepPreviousAssignments = false;
+                    keepPreviousAssignments = true;
                 }
                 //        WarnAssignmentSideEffects.warnAssignmentSideEffects(newGroup, panel.frame());
                 boolean removePreviousAssignments = (oldGroup.getGroupNode().getGroup() instanceof ExplicitGroup)
