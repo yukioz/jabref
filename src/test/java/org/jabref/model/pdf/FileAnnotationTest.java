@@ -1,6 +1,7 @@
 package org.jabref.model.pdf;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 
@@ -16,6 +17,17 @@ public class FileAnnotationTest {
         String dateString = "D:20170512224019-03'00'";
         LocalDateTime date = FileAnnotation.extractModifiedTime(dateString);
         assertEquals(LocalDateTime.of(2017, 05, 12, 22, 40, 19), date);
+    }
+
+    @Test
+    public void testLocalDateTimeNull() {
+        LocalDateTime dateString = LocalDateTime.now();
+        LocalDateTime dateMethod = FileAnnotation.extractModifiedTime(null);
+
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+
+        assertEquals(dateString.format(formatter), dateMethod.format(formatter));
+
     }
 
     @Test
